@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Mode</title>
+
+    <!-- Google Font : Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Some Icon : Font Awosome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="switch.css">
+</head>
+<body>  
+    <nav>
+        <h3>Switch Mode</h3>
+        <input type="checkbox" id="switch"> 
+        <span class="circle-box" onclick="checkMode()">
+            <div class="circle"></div>
+        </span>
+    </nav>
+
+    <div class="content" id="content">
+        <i class="far fa-check-circle" id="image"></i>
+        <h3 id="text">Ready</h3>
+    </div>
+
+    <script> 
+        function checkMode(){
+            let checkbox = document.querySelector("#switch");
+            let content = document.querySelector("#content");
+            let image = document.querySelector("#image");
+            let text = document.querySelector("#text");
+             
+            if (checkbox.checked == false) {
+                checkbox.checked = true;
+                content.style.backgroundColor = "#0d333f";
+                image.classList.remove("fa-check-circle");
+                image.classList.add("fa-moon"); 
+                text.innerHTML = "Dark Mode Activated";
+            } else{
+                checkbox.checked = false;
+                content.style.backgroundColor = "#fafafa";
+                image.classList.remove("fa-moon");
+                image.classList.add("fa-sun");
+                text.innerHTML = "Back To Normal";
+            }
+        }
+    </script>
+</body>
+</html>
